@@ -1,0 +1,31 @@
+Minicurso - GO APIs
+Desenvolvendo API utilizando a Linguagem de Programação Go
+Tags: Go, Go Programming Language, Golang, API
+
+Nassor Paulino da Silva
+Google Developers Group - Floripa
+nassor@gmail.com
+https://google.com/+NassorPaulinodaSilva
+https://github.com/rossan
+
+http://plus.google.com/+DesenvolvedoresGoogle
+http://codigo-google.blogspot.com.br
+https://plus.google.com/109245804055148797587
+
+* Aviso
+
+Esse é uma palestra independente. As opiniões expressas nessa palestra são de responsabilidade minha e não devem de forma alguma serem associadas ao Google.
+
+.image assets/GDG_logo.png
+
+* O Início
+
+.image assets/gopher.png
+
+- Instalando o Go!
+
+* GOPATH
+
+É a variável de ambiente mais importante de todo projeto Go
+
+* Importando as dependencias

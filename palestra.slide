@@ -1,0 +1,339 @@
+Go for Baby Gophers
+Introdução a linguagem de programação Go
+Tags: Go, Go Programming Language, Golang
+
+Nassor Paulino da Silva
+Google Developers Group - Floripa
+nassor@gmail.com
+https://google.com/+NassorPaulinodaSilva
+https://github.com/rossan
+
+http://plus.google.com/+DesenvolvedoresGoogle
+http://codigo-google.blogspot.com.br
+https://plus.google.com/109245804055148797587
+
+* Agenda
+
+- Aviso
+- Quem sou eu?
+- História
+- Características
+- Qualidades e Defeitos
+- O que dá para fazer com Go?
+- Quem usa Go?
+- Por onde Começar?
+
+.image slides/assets/agenda.jpg
+
+* Aviso
+
+Esse é uma palestra independente. As opiniões expressas nessa palestra são de responsabilidade minha e não devem de forma alguma serem associadas ao Google.
+
+.image slides/assets/GDG_logo.png
+
+* Quem sou eu?
+
+- Desde de 3 de julho de 1994 aplicando a filosofia hacker no dia-a-dia
+- Early Adopter de Linguagens de Programação
+  Programar == Lego
+- Usuário Linux desde 1996
+  Não tenho nenhum pouco de saudades do meu Slackware
+- Empresário e Professor para comer e dormir.
+  Ex-não-fan de ambiente acadêmico, mas descobri que dar aula e ganhar para estudar é muita diversão!
+- Formado em Ciência da Computação na Universidade do Sul de Santa Catarina 
+- Um dos organizadores do Grupo de Desenvolvedores Google - Floripa
+
+_sessão_ego_termina_aqui..._
+
+* História
+
+*2007*
+O Início, um projeto experimental interno do Google:
+- Ken Thompson (Unix, B, UTF-8)
+- Rob Pike (Plan 9, UTF-8)
+- Robert Griesemer (V8, JVM Hotspot)
+
+*2009*
+
+- Anuncio da linguagem como um projeto Open Source
+- Foco em desenvolvedores C e C++
+
+*2011*
+
+- Lançamento das versões betas da linguagem
+- Migração não apenas de desenvolvedores C/C++
+- Early Adopters... eu!
+
+* História (cont...)
+
+*2012*
+
+- Lançamento da versão 1.0.0
+- Google anuncia algumas aplicações de uso público, já estão se utilizando da nova linguagem de programação. Foi um ótimo: "Podem usar, é estável!"
+
+*2014*
+
+- Go 1.3.3 (stable)
+- Go 1.4 “To Do” List (destaques)
+  - Boa parte do compilador: C -> Go
+  - Native Client ARM / ARM64
+  - Android NDK support
+  - Sharing Libary support
+
+* Afinal o que é o Go(lang)?
+
+- Go é uma linguagem de programação de código aberto que faz com que seja fácil de construir software simples, confiável e eficiente. (golang.org)
+- Compacta e de uso geral
+- Imperativa e _Orientada_a_Objetos_
+- Com Garbage Collector
+- Compila em código nativo
+- Rápida compilação
+- Execução efiente
+
+* Características - Variáveis
+- Tipos estáticos:
+  var x int
+  var s, t string
+- Inicialização implícita e explícita:
+  var x int
+  var s, t string = "foo", "bar"  // multiplas atribuições
+
+  var x = 42                      // int
+  var s, b = "foo", true          // string, bool
+- Declaração curta de variáveis (apenas dentro de funções):
+  x := 42
+  s, b := "foo", true
+- Ponteiros!
+  return &x
+
+* Características - Tipos
+- Tipos nativos
+  uint8 (byte), uint16, uint32, uint32, uint64,
+  int8, int16, int32, int32 (rune), int64,
+  float32, float64,
+  complex64, complex128,
+  uint, int, uintptr,
+  bool, string,
+  error
+- Tipos compostos
+  array, struct, pointer, function,
+  slice, map, channel
+- Tipos abstratos
+  interface
+
+* Características - Tipos (cont...)
+- Criação de novos tipos
+  type Weekday int
+
+  type Point struct {
+      x, y int
+  }
+- Slices
+  var a [4]int
+  b := [2]string{"Penn", "Teller"}
+- Maps
+  var m map[string]int
+  m = make(map[string]int)
+
+* Características - Funções
+- Funções regulares
+  func Sin(x float64) float64
+  func AddScale(x, y int, f float64) int
+- Multiplos retornos de valor
+  func Write(data []byte) (written int, err error)
+- Parametros Variádicos
+  func Printf(format string, args ...interface{})
+- Funções como tipos
+  type binFunc func(int, int) int
+
+* Características - Métodos
+.play slides/scripts/palestra/metodos.go /START OMIT/,/END OMIT/
+
+* Características - Interfaces
+
+.play slides/scripts/palestra/interfaces.go /START OMIT/,/END OMIT/
+
+* Características - Interfaces (cont...)
+
+.play slides/scripts/palestra/interfaces_slice.go /START OMIT/,/END OMIT/
+
+* Características - Concorrência
+Go utiliza-se de um modelo de concorrência que, quebrando um programa em diversas estruturas, estas podem ser executadas independentemente de forma coordenadas.
+
+Baseado no C. A. R. Hoare: Communicating Sequential Processes (CACM 1978), assim como outras linguagens:
+- occam
+- erlang
+- clojure
+- haskell
+
+_e_meu_conhecimento_sobre_a_formalização_termina_por_aqui!_^.^_
+
+* Características - Concorrência: Goroutines
+A declaração *go* executa um função como uma goroutine (de forma concorrente)
+
+.play slides/scripts/palestra/goroutines.go /START OMIT/,/END OMIT/
+
+* Características - Concorrência: Channels
+São primitivas utilizadas para sincronização e envio e recebimento de mensagens entre as goroutines.
+
+.play slides/scripts/palestra/channels.go /START OMIT/,/END OMIT/
+
+* Características - Concorrência: Select
+"O *switch* da comunicação" _(eu)_
+
+.play slides/scripts/palestra/select.go /START OMIT/,/END OMIT/
+
+* Características - (cont...)
+
+Há mais do que isso que foi, mostrado, mas não muito. A linguagem é concisa!
+
+* Defeitos e Qualidades
+
+* Defeitos - É uma linguagem não bonita
+.code slides/scripts/palestra/uglycode.go
+.caption Código não bonito em [[https://github.com/rossan/kuenea/blob/master/kuenea.go][kuenea.go]]
+
+Joga fora 30 anos de evolução de Teoria da Linguagem de Programação. É basicamente um C melhorado.
+
+  fanboy := true // só isso
+
+* Defeitos - Gerenciamento de dependências
+Esse é cruel, a ferramenta de *carga* de dependencias externas (_go_get_), não tem suporte a versão. Se a _lib_ quebrar a _interface_ e você atualizou a aplicação a dor irá imperar.
+
+  ... não é para tanto, pois nunca sofri com isso.
+
+Há soluções não oficiais, sendo as 2 mais utilizadas:
+- [[https://github.com/tools/godep]]
+- [[http://labix.org/gopkg.in]]
+
+* Defeitos que são Qualidades - Gerência de Erros
+
+Não, vc não tem: being/rescue, try/except, try/catch...
+Tem o panic/defer/recover, mas eles não são utilizados em 99% das vezes.
+
+Como gerenciar os erros então? Multiplos retornos!
+
+.code slides/scripts/palestra/uglycode.go
+
+* (cont...) - Não há herança
+É orientado a objetos, mas não possui suporte a herança.
+
+COMO ASSIM?
+
+Se você programa profissionalmente, você já viu ou já mesmo fez. Fazer uma alteração na classe Pai que resultou em morte instantânea do sistema.
+
+Go foi pensado para ser utilizado em grandes projetos, desenvolvimento por muitas pessoas, herança nesses casos é uma facilidade prejudicial.
+
+* (cont...) - Sem conversão de de tipos implícitas
+  int != int32
+  int != int64
+
+É chato, evita uma infinidade de bugs.
+
+*Go*é*uma*boa*mãe:* Não te deixa fazer caquinha no lugar errado.
+
+* Qualidades - Tooling!
+
+- *go*build*
+Compila todos os pacotes e dependencias, sem instalar.
+
+- *go*install*
+Compila e instala pacotes e dependencias.
+
+- *go*run*
+Compila e roda um programa em Go
+
+- *go*test*
+Roda a suite de testes.
+
+- *go*get*
+Faz o download e instala pacotes e dependecias.
+
+* Qualidades - Tooling! (cont...)
+
+- *godoc*
+GoDoc é vida!
+  godoc -http=:8080
+
+- *gofmt* 
+Varre todos os arquivos .go e refatora para o padrão da linguagem.
+
+- *go*fix*
+Atualiza o código fonte de uma versão mais velha para uma versão mais nova.
+
+- *goimports* (extra)
+Faz um update dos seus imports. Adiciona os que ainda não existem e tira os que não estão sendo usados.
+
+* O que dá para fazer com Go?
+
+* Command Line
+
+.code slides/scripts/palestra/cmd_sample.go HLcmd
+
+- Rodar um _go_build_ para testar a compilação
+- Rodar um _go_install_ para instalar o pacote
+.image slides/assets/gopher.png
+
+* Browser
+O que utilizamos em toda palestra!
+
+.play slides/scripts/palestra/cmd_sample.go HLcmd
+
+- Utilizado também em: [[http://play.golang.org/]]
+
+.image slides/assets/gopher.png
+
+* Web
+
+.play slides/scripts/palestra/web.go
+- [[http://localhost:8123/]]
+.image slides/assets/gopher.png
+
+* Hardware
+- [[http://dave.cheney.net/2012/09/25/installing-go-on-the-raspberry-pi][Raspberry Pi]]
+- [[http://gobot.io/][GoBot - multiplos dispositivos]]
+.image slides/assets/gobot.png 410 _
+
+* Quem usa?
+- [[https://code.google.com/p/go-wiki/wiki/GoUsers][Lista de empresas]] que utilizam Go em algum lugar de sua infra.
+
+Entre estes, se destaca:
+- Google - obvio né?
+- MongoDB Inc. - Muitos dos componentes de infra e ferramentas estão sendo reescritos em Go
+- Canonical
+- Github
+- Dropbox - Migrando diversos serviços de python para Go
+- Secret - Backend server quase todo escrito em Go, utilizando Google App Engine
+- Globo.com
+- DigitalOcean
+- Carbon Games - o servidor de MMO deles é escrito em Go
+- ... um monte...
+
+_designer_é_que_gosta_de_caçar_logos_...
+
+* Por onde começar
+
+- [[https://golang.org]] - Página oficial
+- [[https://godoc.org]] - Concentrador de documentação de bibliotecas
+- [[http://gopheracademy.com]]
+- [[http://goinggo.net]]
+- [[http://golang-book.com]]
+- [[https://groups.google.com/forum/#!forum/golang-nuts]] - Fórum de usuários
+
+.image slides/assets/gopher.png
+
+* Para os escovadores de bits
+- [[https://groups.google.com/forum/#!forum/golang-dev]] - Fórum de desenvolvedores
+- [[http://tip.golang.org]] - Versão de desenvolvimento
+- [[https://code.google.com/p/go/]] - *Ambiente*do*desenvolvimento*do*Go*
+
+_Aviso_: Fortes emoções!
+
+.image slides/assets/gopher_pirata.png 300 _
+
+* Dos Originais
+
+- _https://github.com/aleborba/presentations_
+- _http://talks.golang.org/2014/taste.slide_
+
+.image slides/assets/gopher.jpg 400 _
