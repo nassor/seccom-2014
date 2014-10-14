@@ -130,8 +130,8 @@ O Início, um projeto experimental interno do Google:
       x, y int
   }
 - Slices
-  var a [4]int
-  b := [2]string{"Penn", "Teller"}
+  var a []int
+  b := []string{"Penn", "Teller"}
 - Maps
   var m map[string]int
   m = make(map[string]int)

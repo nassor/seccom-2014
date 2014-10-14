@@ -18,17 +18,27 @@ Esta é uma palestra independente. As opiniões expressas nesta palestra são de
 
 .image slides/assets/GDG_logo.png
 
-* O Início
-
-- Instalando o Go! [[http://golang.org/doc/install]]
-
-.image slides/assets/golang-gopher.jpg
-
 * Aviso [2]
 
 A parte de integração com Angular.js não vai rolar, pois ela estava implementada como aplicação Android + Apache Cordova e não iria ser interessante uma máquina virtual dentro da outra! [decidi não arriscar].
 
 Em contra partida adicionei mais conteúdo e exemplos! _^.^_
+
+* Metodologia
+
+- Esqueça o slide, o que importa é o código!
+
+	git clone https://github.com/rossan/seccom-2014.git
+
+- Código bonito, se conhece outro editor sinta-se a vontade
+
+	sudo yum install gedit
+
+* O Início
+
+- Instalando o Go! [[http://golang.org/doc/install]]
+
+.image slides/assets/golang-gopher.jpg
 
 * $GOPATH
 
@@ -104,5 +114,12 @@ Iremos adicionar o suporte a entrega de json pela aplicação utilizando bibliot
 
 	...
 
+* Persistência
 
+Um teste de persistência utilizando o MongoDB!
+Há drivers para uma infinidade outras formas de persistir dados, mas o MongoDB é mais novidade!
+
+O driver de acesso do MongoDB é o [[http://labix.org/mgo]], que é distribuido utilizando o caminho *"gopkg.in/mgo.v2"*
+
+	...
 
