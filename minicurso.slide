@@ -14,18 +14,95 @@ https://plus.google.com/109245804055148797587
 
 * Aviso
 
-Esse é uma palestra independente. As opiniões expressas nessa palestra são de responsabilidade minha e não devem de forma alguma serem associadas ao Google.
+Esta é uma palestra independente. As opiniões expressas nesta palestra são de responsabilidade minha e não devem de forma alguma serem associadas ao Google.
 
-.image assets/GDG_logo.png
+.image slides/assets/GDG_logo.png
 
 * O Início
 
-.image assets/gopher.png
+- Instalando o Go! [[http://golang.org/doc/install]]
 
-- Instalando o Go!
+.image slides/assets/golang-gopher.jpg
 
-* GOPATH
+* Aviso [2]
 
-É a variável de ambiente mais importante de todo projeto Go
+A parte de integração com Angular.js não vai rolar, pois ela estava implementada como aplicação Android + Apache Cordova e não iria ser interessante uma máquina virtual dentro da outra! [decidi não arriscar].
 
-* Importando as dependencias
+Em contra partida adicionei mais conteúdo e exemplos! _^.^_
+
+* $GOPATH
+
+- É a variável de ambiente mais importante de todo projeto Go
+- É para facilitar o desenvolvimento é recomendado utilizar um $GOPATH global
+- Mas caso você prefira separar tudo bem separadinho:
+  > export GOPATH=`pwd`
+
+
+* Primeiro Programa
+
+E ai está ele, o único, útil e poderoso: Hello World!
+
+	cmd/helloworld/helloworld.go
+
+Partiu pra linha de comando:
+
+	go build
+	rm helloworld
+	go install
+	ls $GOPATH/bin
+
+
+* Hello World - No seu browser!
+
+- o pacote *net/http* contém as primitivas necessárias para se trabalhar com http;
+- o tipo *HandlerFunc* é uma função de dois parametros específicos: *(ResponseWriter,**Request)*;
+- qualquer objeto que implemente a *interface*http.Handler*, i.e. o método *ServeHTTP(ResponseWriter,**Request)*, é pode ser adicionado ao servidor Web;
+- interface em Go é muita diversão!
+
+	... ok código!
+
+* Hello World - Como saber se esta tudo ok?
+
+*TESTES*UNITÁRIOS!*
+
+- Go possui um pacote, extremamente enxuto para realização de testes *"testing"*!
+- Para testar qualquer coisas basta adicionar a palavra *Test* na frente do nome um método, dentro de um arquivo <nomearquivo>_test.go
+- Para testar serviços web também é bem simples, o pacote *"net/http/httptest"*, possui as facilitadores para execução de testes
+
+	Código...
+
+* Simplificando as coisas
+
+Apesar de ter uma biblioteca padrão extremamente rica e ser possível fazer muita coisa só com ela, algumas bibliotecas externas aliviam bastante o processo de desenvolvimento de APIs.
+
+* Routing
+
+Definir rotas utilizando a API padrão pode ser um processo lento e repetitivo
+
+- Lento por exigir muitas vezes códigos de análise de string dependendo da URL passada
+- Repetitivo pela necessidade de ter que fazer isso a quase todo momento.
+
+Iremos contornar esse retrabalho utilizando a biblioteca *"github.com/gorilla/mux"*
+
+	...
+
+* Middleware
+
+É uma API REST, você precisa muito além de apenas os endpoints funcionando corretamente. Log, Gestão de Erros, muitas vezes até distribuição de arquivos estáticos. Além disso, seria muito interessante adicionar novos recursos de forma simples.
+
+Existe uma variedade extensa de middlewares, micro-frameworkds, frameworks... sem tempo para explicar todos. Vamos utilizar o *"github.com/codegangsta/negroni"*.
+
+	...
+
+* Estamos falando de API WEB então: JSON nela!
+
+Estamos montando uma API para uma página web consumir, então entregaremos os dados de forma estruturada.
+
+Opção mais utilizada pelos sites para comunicação de serviços: [[http://json.org/][JSON]]
+
+Iremos adicionar o suporte a entrega de json pela aplicação utilizando biblioteca: *"gopkg.in/unrolled/render.v1"*
+
+	...
+
+
+

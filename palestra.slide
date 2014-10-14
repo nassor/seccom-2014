@@ -27,7 +27,7 @@ https://plus.google.com/109245804055148797587
 
 * Aviso
 
-Esse é uma palestra independente. As opiniões expressas nessa palestra são de responsabilidade minha e não devem de forma alguma serem associadas ao Google.
+Esta é uma palestra independente. As opiniões expressas nesta palestra são de responsabilidade minha e não devem de forma alguma serem associadas ao Google.
 
 .image slides/assets/GDG_logo.png
 
@@ -37,9 +37,8 @@ Esse é uma palestra independente. As opiniões expressas nessa palestra são de
 - Early Adopter de Linguagens de Programação
   Programar == Lego
 - Usuário Linux desde 1996
-  Não tenho nenhum pouco de saudades do meu Slackware
+  Não tenho saudades alguma do meu Slackware
 - Empresário e Professor para comer e dormir.
-  Ex-não-fan de ambiente acadêmico, mas descobri que dar aula e ganhar para estudar é muita diversão!
 - Formado em Ciência da Computação na Universidade do Sul de Santa Catarina 
 - Um dos organizadores do Grupo de Desenvolvedores Google - Floripa
 
@@ -69,7 +68,7 @@ O Início, um projeto experimental interno do Google:
 *2012*
 
 - Lançamento da versão 1.0.0
-- Google anuncia algumas aplicações de uso público, já estão se utilizando da nova linguagem de programação. Foi um ótimo: "Podem usar, é estável!"
+- Google anuncia que algumas aplicações de uso público já estão utilizando a nova linguagem de programação. Foi um ótimo: "Podem usar, é estável!"
 
 *2014*
 
@@ -185,7 +184,7 @@ São primitivas utilizadas para sincronização e envio e recebimento de mensage
 
 * Características - (cont...)
 
-Há mais do que isso que foi, mostrado, mas não muito. A linguagem é concisa!
+Há mais do que isso que foi mostrado, mas não muito. A linguagem é concisa!
 
 * Defeitos e Qualidades
 
@@ -274,12 +273,13 @@ Faz um update dos seus imports. Adiciona os que ainda não existem e tira os que
 - Rodar um _go_install_ para instalar o pacote
 .image slides/assets/gopher.png
 
-* Browser
-O que utilizamos em toda palestra!
+* Browser/Desktop
 
-.play slides/scripts/palestra/cmd_sample.go HLcmd
+*Suporte*ao*Native*Client*(NaCl)*
+- Aplicaçõs binárias executando dentro do Google Chrome.
+- Não encontrei nenhum exemplo e ainda não brinquei com isto. *:(*
 
-- Utilizado também em: [[http://play.golang.org/]]
+*Go*QT/QML*com*suporte*a*OpenGL.*
 
 .image slides/assets/gopher.png
 
@@ -288,6 +288,12 @@ O que utilizamos em toda palestra!
 .play slides/scripts/palestra/web.go
 - [[http://localhost:8123/]]
 .image slides/assets/gopher.png
+
+* Mobile
+
+- Há alguns exemplos Go QML para o Ubuntu Phone
+- Android NDK + Shared Libraries na versão 1.4 do Go
+_Sentido_aranha_avisando_que_algo_esta_por_vir_, mas nada confirmado.
 
 * Hardware
 - [[http://dave.cheney.net/2012/09/25/installing-go-on-the-raspberry-pi][Raspberry Pi]]
@@ -310,6 +316,11 @@ Entre estes, se destaca:
 - ... um monte...
 
 _designer_é_que_gosta_de_caçar_logos_...
+
+* Popularidade
+
+.image slides/assets/ieee-spectrum-2014-10-14.png 450 _
+.caption Ranking de Popularidade de Linguagens (Web) do IEEE - 14 de Outubro de 2014
 
 * Por onde começar
 
