@@ -88,6 +88,8 @@ O Início, um projeto experimental interno do Google:
 - Compila em código nativo
 - Rápida compilação
 - Execução efiente
+- Compila para: Linux, Mac OS X, FreeBSD, NetBSD, OpenBSD, Plan 9 e Window
+- E nas arquiteturas: i386, amd64, e ARM
 
 * Características - Variáveis
 - Tipos estáticos:
