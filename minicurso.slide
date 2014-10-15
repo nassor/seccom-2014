@@ -24,6 +24,19 @@ A parte de integração com Angular.js não vai rolar, pois ela estava implement
 
 Em contra partida adicionei mais conteúdo e exemplos! _^.^_
 
+* Quem sou eu?
+
+- Desde de 3 de julho de 1994 aplicando a filosofia hacker no dia-a-dia
+- Early Adopter de Linguagens de Programação
+  Programar == Lego
+- Usuário Linux desde 1996
+  Não tenho saudades alguma do meu Slackware
+- Empresário e Professor para comer e dormir.
+- Formado em Ciência da Computação na Universidade do Sul de Santa Catarina 
+- Um dos organizadores do Grupo de Desenvolvedores Google - Floripa
+
+_sessão_ego_termina_aqui..._
+
 * Metodologia
 
 - Esqueça o slide, o que importa é o código!
@@ -45,6 +58,7 @@ Em contra partida adicionei mais conteúdo e exemplos! _^.^_
 - É a variável de ambiente mais importante de todo projeto Go
 - É para facilitar o desenvolvimento é recomendado utilizar um $GOPATH global
 - Mas caso você prefira separar tudo bem separadinho:
+  > cd seccom-2014
   > export GOPATH=`pwd`
 
 

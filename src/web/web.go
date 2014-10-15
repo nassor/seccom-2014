@@ -7,13 +7,13 @@ import (
 )
 
 func olaMundo(rw http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(rw, "Olá mundo!")
+	fmt.Fprint(rw, "Olá mundo!")
 }
 
 type StringHandler string
 
 func (s StringHandler) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(rw, s)
+	fmt.Fprint(rw, s)
 }
 
 func main() {

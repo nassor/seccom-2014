@@ -16,7 +16,7 @@ func TestStringHandler(t *testing.T) {
 	stringHandler.ServeHTTP(response, request)
 
 	if response.Code != http.StatusOK {
-		t.Fatalf("Resultado esperado: %s / Resultado recebido:  %s", "teste", response.Body.String())
+		t.Fatalf("Resultado esperado: %s / Resultado recebido:  %s", http.StatusOK, response.Code)
 	}
 
 	if response.Body.String() != "teste" {
@@ -31,7 +31,7 @@ func TestOlaMundo(t *testing.T) {
 	olaMundo(response, request)
 
 	if response.Code != http.StatusOK {
-		t.Fatalf("Resultado esperado: %s / Resultado recebido:  %s", "Olá mundo!", response.Body.String())
+		t.Fatalf("Resultado esperado: %s / Resultado recebido:  %s", http.StatusOK, response.Code)
 	}
 
 	if response.Body.String() != "Olá mundo!" {

@@ -4,7 +4,12 @@ import "fmt"
 
 func main() {
 	// criando uma váriável do tiplo slice de string já atribuindo valores a mesma
-	oláMundo := []string{"Olá Mundo!", "Hello World!", "Bonjour monde", "こんにちは世界"}
+	oláMundo := []string{
+		"Olá Mundo!",
+		"Hello World!",
+		"Bonjour monde",
+		"こんにちは世界",
+	}
 
 	for _, hello := range oláMundo {
 		fmt.Println(hello)

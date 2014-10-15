@@ -14,7 +14,7 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	database := mongoSession.DB("seccom")
+	database := mongoSession.DB("seccom_test")
 
 	// clean database
 	err = database.DropDatabase()
